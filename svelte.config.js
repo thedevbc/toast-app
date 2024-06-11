@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -14,5 +14,9 @@ const config = {
 		adapter: adapter()
 	}
 };
+
+// https://github.com/sveltejs/kit/issues/8026
+// https://github.com/sveltejs/kit/issues/6784
+if (process.env.NODE_ENV?.toLowerCase() == 'development') config.kit.csrf = { checkOrigin: false };
 
 export default config;
