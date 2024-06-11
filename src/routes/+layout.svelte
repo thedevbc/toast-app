@@ -7,7 +7,7 @@
 
 	onMount(() => {
 		setTimeout(() => {
-            throw new window.ErrorEvent('This is an error.');
+            throw new ErrorEvent('This is an error.');
         }, 5000);
 	});
 
