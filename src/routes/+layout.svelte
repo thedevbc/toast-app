@@ -3,11 +3,14 @@
 	// import type { ToastSettings, ToastStore } from '@skeletonlabs/skeleton';
 	import '../app.postcss';
 	import { browser } from '$app/environment';
-	import { tick } from 'svelte';
+	import { onMount, tick } from 'svelte';
+	import { error } from '@sveltejs/kit';
 
-	setTimeout(() => {
-		throw new ErrorEvent('Test', { message: 'This is an error.' });
-	}, 1000);
+	onMount(() =>
+		setTimeout(() => {
+			throw new Error('This is a test error.');
+		}, 1000)
+	);
 
 	initializeStores();
 	const toastStore = getToastStore();
