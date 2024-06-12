@@ -5,11 +5,9 @@
 	import { browser } from '$app/environment';
 	import { onMount, tick } from 'svelte';
 
-
-		setTimeout(() => {
-            throw new ErrorEvent('This is an error.');
-        }, 1000);
-
+	setTimeout(() => {
+		throw new ErrorEvent('This is an error.');
+	}, 1000);
 
 	initializeStores();
 	const toastStore = getToastStore();
