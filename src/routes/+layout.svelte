@@ -4,7 +4,6 @@
 	import '../app.postcss';
 	import { browser } from '$app/environment';
 	import { onMount, tick } from 'svelte';
-	import { error } from '@sveltejs/kit';
 
 	onMount(() =>
 		setTimeout(() => {
